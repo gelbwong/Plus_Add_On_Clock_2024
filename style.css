@@ -69,7 +69,18 @@ body {
   font-size: 35px;
   font-weight: 500;
 }
-
+.goBackLink {
+  padding: 10px;
+  margin-top: 20px;
+}
+.goBackLink a {
+  text-decoration: none;
+  color: rgb(33, 17, 1);
+}
+.goBackLink a:hover {
+  cursor: pointer;
+  color: brown;
+}
 .flowers {
   font-family: "Yarndings 20 Charted";
   font-size: 90px;

@@ -48,6 +48,9 @@ function changeTheCity(event) {
 }
 function changeCity(city) {
   let changCityElement = document.querySelector(".changedCity");
+  if (city === "current") {
+    city = moment.tz.guess();
+  }
   let selectedCity = `<div class="countryInfo">
         <div class="nameAndDate">
           <div class="cityName">${renderCityNames(city)}</div>
@@ -55,7 +58,10 @@ function changeCity(city) {
           <div class="currentDate">${getCurrentDate(city)}</div>
         </div>
         <div class="time">${getCurrentTime(city)}</div>
-      </div>`;
+      </div>
+      <div class="goBackLink">
+      <a href="/"> Go Back!</a></div>
+      `;
   if (changCityElement) {
     changCityElement.innerHTML = selectedCity;
   }
