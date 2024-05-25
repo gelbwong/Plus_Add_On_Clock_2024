@@ -11,13 +11,8 @@ function getCurrentTime(country) {
 }
 
 function renderCityNames(country) {
-  if (country === "Asia/Beirut") {
-    return "Beirut";
-  } else if (country === "Europe/Kaliningrad") {
-    return "Kaliningrad";
-  } else {
-    return "Galapagos";
-  }
+  let renderedName = country.replace("_", " ").split("/")[1];
+  return renderedName;
 }
 
 function setTime() {
@@ -37,7 +32,45 @@ function setTime() {
       </div> `;
   }
   let countriesElement = document.querySelector(".countrySpread");
-  countriesElement.innerHTML = multipleDates;
+  if (countriesElement) {
+    countriesElement.innerHTML = multipleDates;
+  }
 }
+
+function changeTheCity(event) {
+  const newCity = event.target.value;
+  if (newCity.length > 0) {
+    changeCity(newCity);
+  } else {
+    let changeItUp = document.querySelector(".changedCity");
+    changeItUp.innerHTML = '<div class="countrySpread"></div>';
+  }
+}
+function changeCity(city) {
+  let changCityElement = document.querySelector(".changedCity");
+  let selectedCity = `<div class="countryInfo">
+        <div class="nameAndDate">
+          <div class="cityName">${renderCityNames(city)}</div>
+
+          <div class="currentDate">${getCurrentDate(city)}</div>
+        </div>
+        <div class="time">${getCurrentTime(city)}</div>
+      </div>`;
+  if (changCityElement) {
+    changCityElement.innerHTML = selectedCity;
+  }
+}
+
+const selectFormElement = document.querySelector("#cityChoice");
+
+selectFormElement.addEventListener("change", changeTheCity);
+
 setTime();
 setInterval(setTime, 1000);
+
+setInterval(function () {
+  const selectedValue = selectFormElement.value;
+  if (selectedValue.length > 1) {
+    changeTheCity({ target: { value: selectedValue } });
+  }
+}, 1000);
