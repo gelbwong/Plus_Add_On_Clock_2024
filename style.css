@@ -1,6 +1,99 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(135deg, #ebdac8 0%, #381d07 100%);
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
 .container {
   text-align: center;
-  background-color: aquamarine;
-  padding: 50px;
+  background-color: rgb(189, 161, 131);
+  padding: 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 650px;
+  margin: 30px auto;
+  overflow: hidden;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
+
+.countryInfo {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.title {
+  padding: 10px;
+  font-family: "Danfo";
+  margin: 0px 70px 0px 70px;
+  font-size: 70px;
+  color: rgb(33, 17, 1);
+  border-bottom: dashed 1.5px rgba(33, 17, 1, 0.325);
+}
+
+.citySelect {
+  font-family: "Noto Sans Display";
+  padding: 15px;
+  width: 80%;
+  background-color: rgba(33, 17, 1, 0.8);
+  color: rgb(189, 161, 131);
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.countryInfo {
+  font-family: "Noto Sans Display";
+  color: rgb(33, 17, 1);
+  border-bottom: 1px dashed rgba(33, 17, 1, 0.325);
+  margin: 0px 60px 0px 60px;
+}
+.countryInfo:last-child {
+  border: none;
+}
+
+.cityName,
+.currentDate {
+  text-align: left;
+}
+
+.cityName {
+  font-weight: 550;
+  font-size: 35px;
+}
+
+.time {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.flowers {
+  font-family: "Yarndings 20 Charted";
+  font-size: 90px;
+  color: rgba(33, 17, 1, 0.8);
+}
+
+footer {
+  text-align: center;
+  font-family: monospace;
+  color: rgb(167, 163, 163);
+}
+
+/*
+<select name="city" id="cityChoice">
+          <option value="" selected>Please select a city</option>
+          <option value="Australia/Sydney">Sydney</option>
+          <option value="Europe/Paris">Paris</option>
+        </select>
+<div class="countryInfo">
+        <div class="nameAndDate">
+          <div class="cityName">Abu Dhabi</div>
+
+          <div class="currentDate">Saturday 25 May, 2024</div>
+        </div>
+        <div class="time">10:50 AM</div>
+      </div>
+*/
