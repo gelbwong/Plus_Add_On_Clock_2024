@@ -60,7 +60,7 @@ function changeCity(city) {
         <div class="time">${getCurrentTime(city)}</div>
       </div>
       <div class="goBackLink">
-      <a href="/"> Go Back!</a></div>
+      <a href="/" class="goBackLink"> Go Back!</a></div>
       `;
   if (changCityElement) {
     changCityElement.innerHTML = selectedCity;
